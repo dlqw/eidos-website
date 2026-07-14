@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dlqw.github.io/eidos-website/sitemap.xml
+Sitemap: https://rdququ.top/eidos-website/sitemap.xml

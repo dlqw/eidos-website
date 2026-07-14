@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="README.md">English</a> ·
-  <a href="https://dlqw.github.io/eidos-website/zh-CN/">官网</a> ·
+  <a href="https://rdququ.top/eidos-website/zh-CN/">官网</a> ·
   <a href="https://github.com/dlqw/Eidosc">编译器</a> ·
   <a href="https://github.com/dlqw/eidos-tutorial">教程</a>
 </p>
