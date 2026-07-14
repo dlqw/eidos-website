@@ -14,7 +14,8 @@ permissions:
   contents: read
 
 jobs:
-  validate:
+  branch-flow:
+    name: Branch flow
     runs-on: ubuntu-latest
     steps:
       - name: Validate branch flow

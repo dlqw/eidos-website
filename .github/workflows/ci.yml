@@ -12,7 +12,8 @@ permissions:
   contents: read
 
 jobs:
-  validate:
+  quality:
+    name: Website quality
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
