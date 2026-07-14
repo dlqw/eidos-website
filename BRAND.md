@@ -10,8 +10,13 @@ semantic pipeline.
 - `public/brand/eidos-mark.svg`: primary full-color mark;
 - `public/brand/eidos-mark-mono.svg`: single-color mark using `currentColor`;
 - `public/favicon.svg`: small-size mark on the Eidos ink background;
-- `public/brand/eidos-social.svg`: editable social-card source;
+- `scripts/eidos-social.template.svg`: editable social-card layout;
+- `public/brand/eidos-social.svg`: generated social-card vector with text converted to portable paths;
 - generated PNG assets are produced by `npm run brand`.
+
+The social-card generator uses the bundled Manrope variable font under the
+SIL Open Font License. Converting text to paths keeps the published card
+identical across build platforms.
 
 ## Colors
 
