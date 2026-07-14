@@ -1,0 +1,12 @@
+Job :: type {
+    Ready,
+    Running(Int),
+    Finished,
+    Failed(String)
+}
+
+status :: Job -> String {
+    Ready() => "ready",
+    Running(_) => "running",
+    Finished() => "finished"
+}

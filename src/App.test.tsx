@@ -25,17 +25,17 @@ describe("Eidos website", () => {
   it("renders the English home page and its primary product sections", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { level: 1, name: /Give programs a form/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "One syntax from values to types." })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "A language is more than a parser." })).toBeInTheDocument();
-    expect(screen.getByText("0.5.0-alpha.1", { selector: "dd" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 1, name: /typed native language/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Functional forms, systems boundaries, compile-time code." })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "From source file to native artifact—and back to the editor." })).toBeInTheDocument();
+    expect(screen.getAllByText("0.6.0-alpha.1", { selector: "dd" })).toHaveLength(2);
   });
 
   it("uses real locale paths for Simplified Chinese content", () => {
     window.history.replaceState({}, "", "/zh-CN/");
     render(<App />);
 
-    expect(screen.getByRole("heading", { level: 1, name: /让程序拥有/ })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 1, name: /在运行前参与推理/ })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "English" })).toHaveAttribute("href", import.meta.env.BASE_URL);
   });
 
@@ -47,12 +47,12 @@ describe("Eidos website", () => {
     });
     render(<App />);
 
-    const firstTab = screen.getByRole("tab", { name: /Patterns/ });
+    const firstTab = screen.getByRole("tab", { name: /Data \+ patterns/ });
     firstTab.focus();
     await user.keyboard("{ArrowRight}");
 
-    expect(screen.getByRole("tab", { name: /Const generics/ })).toHaveAttribute("aria-selected", "true");
-    expect(screen.getByText("Buffer.eidos")).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /Traits \+ HKT/ })).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByText("Abstraction.eidos")).toBeInTheDocument();
 
     await user.click(screen.getAllByRole("button", { name: "Copy code" })[0]);
     await waitFor(() => expect(screen.getByRole("button", { name: "Copied" })).toBeInTheDocument());

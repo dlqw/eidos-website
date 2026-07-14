@@ -1,0 +1,29 @@
+Marker :: trait {
+    marker :: Self -> String
+}
+
+deriveMarker :: comptime Meta.DeriveInput -> Meta.Expansion {
+    input => {
+        target := Meta.target(input);
+        parameter := Meta.parameter("value", target);
+        method := Meta.function(
+            "marker",
+            [parameter],
+            String,
+            Meta.exprString(Meta.typeName(target))
+        );
+        Meta.expansion([
+            Meta.implementation(Meta.decl(Marker), target, [method])
+        ])
+    }
+}
+
+@derive(deriveMarker)
+User :: type {
+    name: String,
+    age: Int
+}
+
+main :: Unit -> String {
+    _ => marker(User { name: "Ada", age: 36 })
+}

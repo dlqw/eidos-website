@@ -1,0 +1,9 @@
+import Std.Console
+
+announce :: String -> Unit need IO {
+    release => Console.write_text_text_line("shipping ", release)
+}
+
+main :: Unit -> Unit need IO {
+    _ => announce("Eidos 0.6")
+}

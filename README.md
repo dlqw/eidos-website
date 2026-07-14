@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="public/brand/eidos-mark.svg" width="104" alt="Eidos logo" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/brand/eidos-lockup-dark.svg" />
+    <img src="public/brand/eidos-lockup.svg" width="330" alt="Eidos logo" />
+  </picture>
 </p>
 
 <h1 align="center">Eidos website</h1>
@@ -40,6 +43,7 @@ feedback, while Vite produces a GitHub Pages-ready artifact.
 │   └── generate-brand-assets.mjs
 ├── src/
 │   ├── components/         # Accessible interactive components
+│   ├── examples/           # Eidosc-verified examples imported as site source
 │   ├── test/               # Shared test setup
 │   ├── App.tsx             # Page composition
 │   ├── content.ts          # English and Simplified Chinese content
@@ -79,6 +83,9 @@ npm run check
 `npm run check` runs linting, TypeScript checks, interaction and accessibility
 tests, and a production build. Generated brand PNGs are committed so metadata
 consumers and social previews do not depend on an SVG renderer.
+
+The code shown on the site lives in `src/examples/`. Coordinated language
+changes validate those files with the target Eidosc version before publication.
 
 ## Deployment
 
