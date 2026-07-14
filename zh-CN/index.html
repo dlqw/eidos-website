@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b16" />
+    <meta name="description" content="Eidos 是一门处于实验阶段、拥有函数式核心、类型化元编程能力和一体化 LLVM 工具链的静态类型原生语言。" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Eidos — 类型塑形，原生落地" />
+    <meta property="og:description" content="函数式核心、类型化编译期编程与一体化 LLVM 工具链。" />
+    <meta property="og:url" content="https://dlqw.github.io/eidos-website/zh-CN/" />
+    <meta property="og:image" content="https://dlqw.github.io/eidos-website/brand/eidos-social.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Eidos 编程语言" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://dlqw.github.io/eidos-website/zh-CN/" />
+    <link rel="alternate" hreflang="en" href="https://dlqw.github.io/eidos-website/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://dlqw.github.io/eidos-website/zh-CN/" />
+    <link rel="alternate" hreflang="x-default" href="https://dlqw.github.io/eidos-website/" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="manifest" href="%BASE_URL%site.webmanifest" />
+    <title>Eidos — 类型塑形，原生落地</title>
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("eidos-theme-v1");
+          const systemDark = matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.dataset.theme = stored || (systemDark ? "dark" : "light");
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Eidos",
+        "description": "一门拥有函数式核心与类型化元编程能力的实验性静态类型原生编程语言。",
+        "codeRepository": "https://github.com/dlqw/Eidosc",
+        "programmingLanguage": "Eidos",
+        "license": "https://opensource.org/license/mit"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+    <div id="root"></div>
+    <noscript>Eidos 官网需要 JavaScript 提供代码切换、主题选择和复制功能；完整文档仍可在 GitHub 阅读。</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

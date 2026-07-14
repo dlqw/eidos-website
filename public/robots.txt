@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dlqw.github.io/eidos-website/sitemap.xml

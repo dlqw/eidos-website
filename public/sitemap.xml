@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dlqw.github.io/eidos-website/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dlqw.github.io/eidos-website/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dlqw.github.io/eidos-website/zh-CN/" />
+  </url>
+  <url>
+    <loc>https://dlqw.github.io/eidos-website/zh-CN/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dlqw.github.io/eidos-website/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://dlqw.github.io/eidos-website/zh-CN/" />
+  </url>
+</urlset>

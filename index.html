@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b16" />
+    <meta name="description" content="Eidos is an experimental statically typed native language with a functional core, typed metaprogramming, and an integrated LLVM toolchain." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Eidos — Typed forms, native programs" />
+    <meta property="og:description" content="A functional core, typed compile-time programming, and a native LLVM toolchain." />
+    <meta property="og:url" content="https://dlqw.github.io/eidos-website/" />
+    <meta property="og:image" content="https://dlqw.github.io/eidos-website/brand/eidos-social.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Eidos programming language" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://dlqw.github.io/eidos-website/" />
+    <link rel="alternate" hreflang="en" href="https://dlqw.github.io/eidos-website/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://dlqw.github.io/eidos-website/zh-CN/" />
+    <link rel="alternate" hreflang="x-default" href="https://dlqw.github.io/eidos-website/" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="manifest" href="%BASE_URL%site.webmanifest" />
+    <title>Eidos — Typed forms, native programs</title>
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("eidos-theme-v1");
+          const systemDark = matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.dataset.theme = stored || (systemDark ? "dark" : "light");
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Eidos",
+        "description": "An experimental statically typed native programming language with a functional core and typed metaprogramming.",
+        "codeRepository": "https://github.com/dlqw/Eidosc",
+        "programmingLanguage": "Eidos",
+        "license": "https://opensource.org/license/mit"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="root"></div>
+    <noscript>Eidos requires JavaScript for interactive tabs, theme selection, and copy actions. Documentation remains available on GitHub.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

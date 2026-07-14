@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientTransform="translate(910 80) rotate(139) scale(820 760)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#28326B"/>
+      <stop offset="0.56" stop-color="#11162A"/>
+      <stop offset="1" stop-color="#080B16"/>
+    </radialGradient>
+    <linearGradient id="top" x1="18" y1="18" x2="112" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#72E0F5"/><stop offset="1" stop-color="#6574FF"/></linearGradient>
+    <linearGradient id="spine" x1="18" y1="18" x2="46" y2="110" gradientUnits="userSpaceOnUse"><stop stop-color="#6574FF"/><stop offset="1" stop-color="#8C5CFF"/></linearGradient>
+    <linearGradient id="middle" x1="46" y1="52" x2="94" y2="72" gradientUnits="userSpaceOnUse"><stop stop-color="#8C5CFF"/><stop offset="1" stop-color="#34D3BA"/></linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0v48" fill="none" stroke="#A8B1FF" stroke-opacity=".08"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1020" cy="110" r="320" fill="#6574FF" opacity=".08"/>
+  <g transform="translate(88 104) scale(2.15)">
+    <path fill="url(#spine)" d="M18 18l28 22v48l-28 22z"/>
+    <path fill="url(#top)" d="M18 18h94L94 40H46z"/>
+    <path fill="url(#middle)" d="M46 52h48L77 72H46z"/>
+    <path fill="#7664F5" d="M46 88h66l-18 22H18z"/>
+  </g>
+  <text x="405" y="250" fill="#F6F7FF" font-family="Arial, sans-serif" font-size="118" font-weight="700" letter-spacing="-5">Eidos</text>
+  <text x="412" y="330" fill="#C2C9DD" font-family="Arial, sans-serif" font-size="35" font-weight="500">Typed forms. Native programs.</text>
+  <rect x="412" y="382" width="212" height="46" rx="23" fill="#6574FF" fill-opacity=".16" stroke="#8892FF" stroke-opacity=".5"/>
+  <text x="436" y="413" fill="#DDE1FF" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="1.4">0.5.0-alpha.1</text>
+  <text x="88" y="558" fill="#8490AE" font-family="Arial, sans-serif" font-size="22">Functional core · typed metaprogramming · LLVM toolchain</text>
+</svg>
