@@ -1,0 +1,22 @@
+{
+  "name": "Eidos Programming Language",
+  "short_name": "Eidos",
+  "description": "An experimental statically typed native language with a functional core and typed metaprogramming.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080b16",
+  "theme_color": "#080b16",
+  "icons": [
+    {
+      "src": "brand/eidos-mark-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "brand/eidos-mark-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

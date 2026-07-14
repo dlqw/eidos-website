@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Eidos</title>
+  <desc id="desc">Monochrome folded E mark.</desc>
+  <g fill="currentColor">
+    <path d="M18 18l28 22v48l-28 22z"/>
+    <path d="M18 18h94L94 40H46z"/>
+    <path d="M46 52h48L77 72H46z"/>
+    <path d="M46 88h66l-18 22H18z"/>
+  </g>
+</svg>

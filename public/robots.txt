@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rdququ.top/eidos-website/sitemap.xml
