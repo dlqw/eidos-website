@@ -1,0 +1,10 @@
+import Std.Applicative
+import Std.Option
+
+into_context[A, G: kind2 : Applicative.Applicative[G]] :: A -> G[A] {
+    value => Applicative.pure(value)
+}
+
+answer :: Unit -> Option[Int] {
+    _ => into_context(42)
+}

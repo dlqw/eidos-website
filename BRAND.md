@@ -1,34 +1,51 @@
 # Eidos brand assets
 
-The Eidos mark represents one typed form moving through multiple compiler
-layers. Four connected facets form an abstract **E**: source and types,
-structured intermediate representations, and native output remain part of one
-semantic pipeline.
+The Eidos mark is a calm geometric owl. The owl connects the language's name
+and Greek roots with reason, deliberate construction, and clear judgment. Its
+symmetry reflects a language that brings functional, systems, and compile-time
+programming into one coherent form.
+
+The mark is intentionally compact: a single frontal silhouette, two open eye
+forms, and one restrained oxide beak. It must remain recognizable at favicon
+size without feathers, outlines, gradients, or decorative effects.
 
 ## Assets
 
-- `public/brand/eidos-mark.svg`: primary full-color mark;
+- `public/brand/eidos-mark.svg`: primary mark for light surfaces;
+- `public/brand/eidos-mark-dark.svg`: mark for dark surfaces;
 - `public/brand/eidos-mark-mono.svg`: single-color mark using `currentColor`;
-- `public/favicon.svg`: small-size mark on the Eidos ink background;
+- `public/brand/eidos-lockup.svg`: owl with the uppercase **EIDOS** wordmark;
+- `public/brand/eidos-lockup-dark.svg`: lockup for dark surfaces;
+- `public/favicon.svg`: small-size mark on a fixed paper field;
 - `scripts/eidos-social.template.svg`: editable social-card layout;
-- `public/brand/eidos-social.svg`: generated social-card vector with text converted to portable paths;
+- `public/brand/eidos-social.svg`: generated social-card vector with text
+  converted to portable paths;
 - generated PNG assets are produced by `npm run brand`.
 
-The social-card generator uses the bundled Manrope variable font under the
-SIL Open Font License. Converting text to paths keeps the published card
-identical across build platforms.
+The lockup and social-card generators use the bundled Manrope variable font
+under the SIL Open Font License. Converting text to paths keeps the published
+assets identical across build platforms.
 
 ## Colors
 
 | Token | Hex | Use |
 | --- | --- | --- |
-| Ink | `#080B16` | Dark background |
-| Iris | `#6574FF` | Primary action and mark |
-| Violet | `#8C5CFF` | Compile-time facet |
-| Teal | `#34D3BA` | Structure and success accent |
-| Ice | `#72E0F5` | Highlight |
+| Graphite | `#242523` | Primary mark and wordmark |
+| Ink | `#20211F` | Dark surfaces and code contexts |
+| Paper | `#F4F0E8` | Light surfaces and eye forms |
+| Oxide | `#C9654F` | Beak and restrained brand accent |
+| Light oxide | `#DE7A63` | Beak on dark surfaces |
 
-Keep clear space around the mark equal to at least one quarter of its width.
-Do not redraw the facets, add shadows inside the mark, rotate it, or replace its
-palette with another project's brand colors. Use the monochrome asset whenever
-the full-color mark would not have sufficient contrast.
+The identity uses flat colors. Do not introduce purple-cyan gradients, glow,
+glass effects, shadows inside the mark, simulated depth, or generated texture.
+
+## Usage
+
+- Keep clear space around the mark equal to at least one quarter of its width.
+- Use the primary mark on Paper or similarly light neutral surfaces.
+- Use the dark asset on Ink, Graphite, or similarly dark neutral surfaces.
+- Use the horizontal lockup when the Eidos name is not already present nearby.
+- Preserve the uppercase spelling **EIDOS** in the official lockup.
+- Use the monochrome asset when reproduction permits only one color.
+- Do not redraw the owl, alter its expression, add feathers, rotate it, or turn
+  it into a cartoon mascot inside product branding.

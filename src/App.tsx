@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { BrandAsset } from "./components/BrandAsset";
 import { CodeShowcase } from "./components/CodeShowcase";
 import { CopyButton } from "./components/CopyButton";
 import { Footer } from "./components/Footer";
@@ -6,40 +7,41 @@ import { Header } from "./components/Header";
 import { ArrowIcon, ExternalIcon } from "./components/Icons";
 import { siteContent, siteLinks, type Locale } from "./content";
 
-interface SectionIntroProps {
+interface SectionHeadingProps {
   eyebrow: string;
   title: string;
   description: string;
-  titleId?: string;
-  children?: ReactNode;
-  align?: "left" | "center";
+  titleId: string;
 }
 
-function SectionIntro({ eyebrow, title, description, titleId, children, align = "left" }: SectionIntroProps) {
+function SectionHeading({ eyebrow, title, description, titleId }: SectionHeadingProps) {
   return (
-    <div className={`section-intro section-intro--${align}`}>
-      <p className="eyebrow"><span aria-hidden="true" />{eyebrow}</p>
+    <header className="section-heading">
+      <p className="eyebrow">{eyebrow}</p>
       <h2 id={titleId}>{title}</h2>
-      <p className="section-intro__description">{description}</p>
-      {children}
-    </div>
+      <p>{description}</p>
+    </header>
   );
 }
 
-function ExternalAction({
+function ActionLink({
   href,
   children,
-  className = "button button--secondary",
-  icon = "external"
+  primary = false
 }: {
   href: string;
   children: ReactNode;
-  className?: string;
-  icon?: "external" | "arrow";
+  primary?: boolean;
 }) {
+  const external = !href.startsWith("#");
   return (
-    <a className={className} href={href} target="_blank" rel="noreferrer">
-      {children}{icon === "arrow" ? <ArrowIcon /> : <ExternalIcon />}
+    <a
+      className={primary ? "action-link action-link--primary" : "action-link"}
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+    >
+      {children}{external ? <ExternalIcon /> : <ArrowIcon />}
     </a>
   );
 }
@@ -58,178 +60,198 @@ export default function App() {
       <Header content={content} locale={locale} />
       <main id="main-content">
         <section className="hero shell" aria-labelledby="hero-title">
-          <div className="hero__content">
-            <p className="hero__eyebrow"><span className="status-dot" />{content.hero.eyebrow}</p>
-            <h1 id="hero-title">
-              {content.hero.titleStart}<br />
-              <span>{content.hero.titleAccent}</span>
-            </h1>
+          <div className="hero__copy">
+            <p className="hero__kicker">{content.hero.kicker}</p>
+            <h1 id="hero-title">{content.hero.title}</h1>
             <p className="hero__description">{content.hero.description}</p>
             <div className="hero__actions">
-              <ExternalAction href={tutorial} className="button button--primary" icon="arrow">{content.hero.primaryAction}</ExternalAction>
-              <ExternalAction href={siteLinks.source}>{content.hero.secondaryAction}</ExternalAction>
+              <ActionLink href={tutorial} primary>{content.hero.primaryAction}</ActionLink>
+              <ActionLink href="#install">{content.hero.secondaryAction}</ActionLink>
             </div>
-            <ul className="hero__proof" aria-label="Eidos highlights">
-              {content.hero.proof.map((item) => <li key={item}><span aria-hidden="true">✦</span>{item}</li>)}
-            </ul>
           </div>
-
-          <div className="hero-visual" role="img" aria-label="Eidos compilation model">
-            <div className="hero-visual__halo" aria-hidden="true" />
-            <div className="form-card form-card--source">
-              <span>01 / source</span>
-              <code>User :: type</code>
+          <div className="hero__code" aria-label={content.hero.codeLabel}>
+            <div className="code-header">
+              <span>Workflow.eidos</span>
+              <span>{content.hero.codeLabel}</span>
             </div>
-            <div className="form-card form-card--type">
-              <span>02 / typed form</span>
-              <code>Meta::typeInfo</code>
-            </div>
-            <div className="hero-mark">
-              <img src={`${import.meta.env.BASE_URL}brand/eidos-mark.svg`} alt="Folded Eidos mark" width="188" height="188" />
-              <span>one semantic pipeline</span>
-            </div>
-            <div className="form-card form-card--native">
-              <span>03 / native</span>
-              <code>LLVM · target</code>
-            </div>
-            <div className="hero-visual__axis" aria-hidden="true"><span>compile time</span><i /><span>runtime</span></div>
+            <pre><code>{content.code.examples[0].code}</code></pre>
           </div>
         </section>
 
-        <section className="section code-section" id="language" aria-labelledby="language-title">
-          <div className="shell code-section__grid">
-            <SectionIntro
-              eyebrow={content.code.sectionEyebrow}
-              title={content.code.sectionTitle}
-              description={content.code.sectionDescription}
-              titleId="language-title"
-            >
-              <div className="semantic-note">
-                <span className="semantic-note__index">E / 01</span>
-                <span>{locale === "zh-CN" ? "类型系统贯穿运行时与编译期边界" : "One type system across the runtime and compile-time boundary"}</span>
-              </div>
-            </SectionIntro>
-            <CodeShowcase content={content.code} />
+        <section className="release-bar" aria-label={locale === "zh-CN" ? "当前发布信息" : "Current release information"}>
+          <div className="shell release-bar__inner">
+            <dl>
+              <div><dt>{content.release.versionLabel}</dt><dd>{content.release.version}</dd></div>
+              <div><dt>{content.release.statusLabel}</dt><dd>{content.release.status}</dd></div>
+              <div><dt>{content.release.targetLabel}</dt><dd>{content.release.target}</dd></div>
+            </dl>
+            <a href={siteLinks.changelogs} target="_blank" rel="noreferrer">{content.release.details}<ArrowIcon /></a>
           </div>
         </section>
 
-        <section className="section shell" id="why" aria-labelledby="why-title">
-          <SectionIntro
-            eyebrow={content.features.eyebrow}
-            title={content.features.title}
-            description={content.features.description}
-            titleId="why-title"
+        <nav className="quick-links shell" aria-label={locale === "zh-CN" ? "常用入口" : "Quick links"}>
+          {content.quickLinks.map((item, index) => {
+            const external = !item.href.startsWith("#");
+            return (
+              <a href={item.href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined} key={item.label}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{item.label}</strong>
+                <small>{item.description}</small>
+                {external ? <ExternalIcon /> : <ArrowIcon />}
+              </a>
+            );
+          })}
+        </nav>
+
+        <section className="section shell" id="language" aria-labelledby="language-title">
+          <SectionHeading
+            eyebrow={content.code.sectionEyebrow}
+            title={content.code.sectionTitle}
+            description={content.code.sectionDescription}
+            titleId="language-title"
           />
-          <div className="feature-grid">
-            {content.features.items.map((feature) => (
-              <article className="feature-card" key={feature.index}>
-                <div className="feature-card__meta"><span>{feature.index}</span><span>{feature.detail}</span></div>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-                <div className="feature-card__line" aria-hidden="true" />
-              </article>
-            ))}
-          </div>
+          <CodeShowcase content={content.code} />
         </section>
 
-        <section className="section pipeline-section" aria-labelledby="pipeline-title">
+        <section className="section ruled-section" id="why" aria-labelledby="why-title">
           <div className="shell">
-            <SectionIntro
-              eyebrow={content.pipeline.eyebrow}
-              title={content.pipeline.title}
-              description={content.pipeline.description}
-              titleId="pipeline-title"
-              align="center"
+            <SectionHeading
+              eyebrow={content.principles.eyebrow}
+              title={content.principles.title}
+              description={content.principles.description}
+              titleId="why-title"
             />
-            <ol className="pipeline">
-              {content.pipeline.stages.map((stage, index) => (
-                <li key={stage}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <strong>{stage}</strong>
-                  {index < content.pipeline.stages.length - 1 ? <i aria-hidden="true" /> : null}
+            <ol className="principle-list">
+              {content.principles.items.map((item) => (
+                <li key={item.index}>
+                  <span>{item.index}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
                 </li>
               ))}
             </ol>
-            <p className="pipeline-note"><span>i</span>{content.pipeline.footnote}</p>
           </div>
         </section>
 
-        <section className="section shell" id="toolchain" aria-labelledby="toolchain-title">
-          <SectionIntro
-            eyebrow={content.tools.eyebrow}
-            title={content.tools.title}
-            description={content.tools.description}
-            titleId="toolchain-title"
+        <section className="section shell" aria-labelledby="diagnostics-title">
+          <SectionHeading
+            eyebrow={content.diagnostics.eyebrow}
+            title={content.diagnostics.title}
+            description={content.diagnostics.description}
+            titleId="diagnostics-title"
           />
-          <div className="tool-grid">
-            {content.tools.items.map((tool, index) => (
-              <a className={`tool-card tool-card--${index + 1}`} href={tool.href} target="_blank" rel="noreferrer" key={tool.name}>
-                <div className="tool-card__head">
-                  <span className="tool-card__glyph" aria-hidden="true">{tool.name.slice(0, 2)}</span>
-                  <span>{tool.role}</span>
-                </div>
-                <h3>{tool.name}</h3>
-                <p>{tool.description}</p>
-                <span className="tool-card__link">{content.tools.visit}<ArrowIcon /></span>
-              </a>
-            ))}
+          <div className="diagnostic-demo">
+            <div>
+              <div className="code-header"><span>{content.diagnostics.sourceLabel}</span><span>Incomplete.eidos</span></div>
+              <pre><code>{content.diagnostics.source}</code></pre>
+            </div>
+            <div className="diagnostic-output">
+              <div className="code-header"><span>{content.diagnostics.outputLabel}</span><span>Types</span></div>
+              <pre><code>{content.diagnostics.output}</code></pre>
+              <p>{content.diagnostics.note}</p>
+            </div>
           </div>
         </section>
 
-        <section className="section start-section" aria-labelledby="start-title">
-          <div className="shell start-grid">
+        <section className="section ruled-section" id="toolchain" aria-labelledby="toolchain-title">
+          <div className="shell">
+            <SectionHeading
+              eyebrow={content.toolchain.eyebrow}
+              title={content.toolchain.title}
+              description={content.toolchain.description}
+              titleId="toolchain-title"
+            />
+            <div className="pipeline" aria-label={content.toolchain.stagesLabel}>
+              <strong>{content.toolchain.stagesLabel}</strong>
+              <ol>{content.toolchain.stages.map((stage) => <li key={stage}>{stage}</li>)}</ol>
+            </div>
+            <div className="tool-list">
+              {content.toolchain.items.map((tool) => (
+                <a href={tool.href} target="_blank" rel="noreferrer" key={tool.name}>
+                  <div><span>{tool.kind}</span><h3>{tool.name}</h3></div>
+                  <p>{tool.description}</p>
+                  <div className="tool-list__meta"><span>{tool.version}</span><strong>{content.toolchain.visit}<ArrowIcon /></strong></div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section shell" id="install" aria-labelledby="install-title">
+          <div className="install-layout">
             <div>
-              <SectionIntro
-                eyebrow={content.start.eyebrow}
-                title={content.start.title}
-                description={content.start.description}
-                titleId="start-title"
+              <SectionHeading
+                eyebrow={content.install.eyebrow}
+                title={content.install.title}
+                description={content.install.description}
+                titleId="install-title"
               />
               <div className="requirements">
-                <h3>{content.start.requirements}</h3>
-                <ul>{content.start.requirementItems.map((item) => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
+                <h3>{content.install.requirements}</h3>
+                <ul>{content.install.requirementItems.map((item) => <li key={item}>{item}</li>)}</ul>
               </div>
-              <ExternalAction href={siteLinks.eidosup}>{content.start.eidosup}</ExternalAction>
+              <ActionLink href={siteLinks.eidosup}>{content.install.eidosup}</ActionLink>
             </div>
-            <div className="terminal-card">
-              <div className="terminal-card__bar">
-                <span>{content.start.commandLabel}</span>
+            <div className="terminal">
+              <div className="code-header">
+                <span>{content.install.commandLabel}</span>
                 <CopyButton
-                  value={content.start.command}
+                  value={content.install.command}
                   idleLabel={content.code.copy}
                   successLabel={content.code.copied}
                   failureLabel={content.code.copyFailed}
                 />
               </div>
-              <pre><code>{content.start.command}</code></pre>
-              <p><span aria-hidden="true">→</span>{content.start.note}</p>
+              <pre><code>{content.install.command}</code></pre>
+              <p>{content.install.note}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section package-section" id="packages" aria-labelledby="packages-title">
+          <div className="shell">
+            <SectionHeading
+              eyebrow={content.packages.eyebrow}
+              title={content.packages.title}
+              description={content.packages.description}
+              titleId="packages-title"
+            />
+            <div className="package-layout">
+              <div className="manifest-block">
+                <div className="code-header"><span>{content.packages.manifestLabel}</span><span>schema 3</span></div>
+                <pre><code>{content.packages.manifest}</code></pre>
+              </div>
+              <div className="package-notes">
+                <article><h3>{content.packages.stdTitle}</h3><p>{content.packages.stdDescription}</p></article>
+                <article><h3>{content.packages.registryTitle}</h3><p>{content.packages.registryDescription}</p></article>
+                <div>{content.packages.links.map((link) => <ActionLink href={link.href} key={link.label}>{link.label}</ActionLink>)}</div>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="section shell" id="learn" aria-labelledby="learn-title">
-          <SectionIntro
+          <SectionHeading
             eyebrow={content.learn.eyebrow}
             title={content.learn.title}
             description={content.learn.description}
             titleId="learn-title"
           />
-          <div className="resource-grid">
-            {content.learn.items.map((resource) => (
-              <a className="resource-card" href={resource.href} target="_blank" rel="noreferrer" key={`${resource.kind}-${resource.title}`}>
-                <span className="resource-card__kind">{resource.kind}</span>
-                <h3>{resource.title}</h3>
-                <p>{resource.description}</p>
-                <span className="resource-card__open">{content.learn.open}<ExternalIcon /></span>
+          <div className="resource-list">
+            {content.learn.items.map((item) => (
+              <a href={item.href} target="_blank" rel="noreferrer" key={`${item.kind}-${item.label}`}>
+                <span>{item.kind}</span>
+                <div><h3>{item.label}</h3><p>{item.description}</p></div>
+                <strong>{content.learn.open}<ExternalIcon /></strong>
               </a>
             ))}
           </div>
         </section>
 
         <section className="section status-section" id="status" aria-labelledby="status-title">
-          <div className="shell status-grid">
+          <div className="shell status-layout">
             <div>
-              <SectionIntro
+              <SectionHeading
                 eyebrow={content.status.eyebrow}
                 title={content.status.title}
                 description={content.status.description}
@@ -239,24 +261,32 @@ export default function App() {
                 {content.status.facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
               </dl>
             </div>
-            <aside className="status-notice">
-              <span className="status-notice__icon" aria-hidden="true">α</span>
-              <div><h3>{content.status.noticeTitle}</h3><p>{content.status.notice}</p></div>
+            <aside className="alpha-note">
+              <span aria-hidden="true">α</span>
+              <h3>{content.status.noticeTitle}</h3>
+              <p>{content.status.notice}</p>
             </aside>
           </div>
         </section>
 
-        <section className="closing shell" aria-labelledby="closing-title">
-          <div className="closing__mark" aria-hidden="true">
-            <img src={`${import.meta.env.BASE_URL}brand/eidos-mark-mono.svg`} alt="" width="260" height="260" />
-          </div>
-          <div className="closing__content">
-            <p className="eyebrow"><span aria-hidden="true" />Eidos / contribute</p>
-            <h2 id="closing-title">{content.closing.title}</h2>
-            <p>{content.closing.description}</p>
-            <div className="closing__actions">
-              <ExternalAction href={siteLinks.contributing} className="button button--light" icon="arrow">{content.closing.primaryAction}</ExternalAction>
-              <ExternalAction href={siteLinks.issues} className="button button--ghost">{content.closing.secondaryAction}</ExternalAction>
+        <section className="section shell" id="community" aria-labelledby="community-title">
+          <div className="community-layout">
+            <div className="community-heading">
+              <BrandAsset width={112} height={112} />
+              <SectionHeading
+                eyebrow={content.community.eyebrow}
+                title={content.community.title}
+                description={content.community.description}
+                titleId="community-title"
+              />
+            </div>
+            <div className="community-links">
+              {content.community.items.map((item) => (
+                <a href={item.href} target="_blank" rel="noreferrer" key={item.label}>
+                  <h3>{item.label}<ArrowIcon /></h3>
+                  <p>{item.description}</p>
+                </a>
+              ))}
             </div>
           </div>
         </section>

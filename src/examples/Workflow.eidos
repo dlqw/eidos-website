@@ -1,0 +1,19 @@
+Job[A] :: type {
+    Ready(A),
+    Running(A, Int),
+    Finished(A),
+    Failed(String)
+}
+
+progress[A] :: Job[A] -> Int {
+    Ready(_) => 0,
+    Running(_, percent) when percent < 100 => percent,
+    Running(_, _) => 100,
+    Finished(_) => 100,
+    Failed(_) => 0
+}
+
+should_retry[A] :: Job[A] -> Bool {
+    Failed(_) => true,
+    _ => false
+}

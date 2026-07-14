@@ -1,4 +1,5 @@
 import type { SiteContent } from "../content";
+import { BrandAsset } from "./BrandAsset";
 import { ExternalIcon } from "./Icons";
 
 interface FooterProps {
@@ -20,8 +21,7 @@ export function Footer({ content }: FooterProps) {
       <div className="shell footer-grid">
         <div className="footer-brand">
           <a className="brand" href={homeHref} aria-label="Eidos home">
-            <img src={`${import.meta.env.BASE_URL}brand/eidos-mark.svg`} alt="" width="42" height="42" />
-            <span>Eidos</span>
+            <BrandAsset kind="lockup" width={132} height={48} />
           </a>
           <p>{content.footer.description}</p>
         </div>
@@ -38,7 +38,7 @@ export function Footer({ content }: FooterProps) {
       </div>
       <div className="shell footer-bottom">
         <span>{content.footer.copyright}</span>
-        <span className="footer-form">Source · Type · Form · Native</span>
+        <span className="footer-form">{content.footer.closingLine}</span>
       </div>
     </footer>
   );

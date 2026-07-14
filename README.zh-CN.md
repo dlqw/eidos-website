@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="public/brand/eidos-mark.svg" width="104" alt="Eidos Logo" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/brand/eidos-lockup-dark.svg" />
+    <img src="public/brand/eidos-lockup.svg" width="330" alt="Eidos Logo" />
+  </picture>
 </p>
 
 <h1 align="center">Eidos 官网</h1>
@@ -37,6 +40,7 @@
 │   └── generate-brand-assets.mjs
 ├── src/
 │   ├── components/         # 无障碍交互组件
+│   ├── examples/           # 经 Eidosc 验证并直接导入网站的示例
 │   ├── test/               # 测试公共配置
 │   ├── App.tsx             # 页面结构
 │   ├── content.ts          # 英文和简体中文内容
@@ -75,6 +79,9 @@ npm run check
 `npm run check` 会依次执行代码检查、TypeScript 检查、交互与无障碍测试，
 并完成生产构建。生成的品牌 PNG 会提交到仓库，使网站元数据和社交分享预览
 不依赖 SVG 渲染器。
+
+网站展示的代码位于 `src/examples/`。语言协调更新会在发布前使用目标 Eidosc
+版本验证这些文件。
 
 ## 部署
 

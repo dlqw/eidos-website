@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from "react";
 import type { Locale, SiteContent } from "../content";
+import { BrandAsset } from "./BrandAsset";
 import { CloseIcon, GitHubIcon, MenuIcon, MoonIcon, SunIcon } from "./Icons";
 
 interface HeaderProps {
@@ -40,7 +41,7 @@ export function Header({ content, locale }: HeaderProps) {
     document.documentElement.dataset.theme = nextTheme;
     document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')?.setAttribute(
       "content",
-      nextTheme === "dark" ? "#080b16" : "#f5f6fb"
+      nextTheme === "dark" ? "#20211f" : "#f4f0e8"
     );
     try {
       localStorage.setItem("eidos-theme-v1", nextTheme);
@@ -54,8 +55,7 @@ export function Header({ content, locale }: HeaderProps) {
     <header className="site-header">
       <div className="site-header__inner shell">
         <a className="brand" href={homeHref} aria-label="Eidos home">
-          <img src={`${base}brand/eidos-mark.svg`} alt="" width="38" height="38" />
-          <span>Eidos</span>
+          <BrandAsset kind="lockup" width={110} height={40} />
           <span className="brand__status">alpha</span>
         </a>
 

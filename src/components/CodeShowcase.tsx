@@ -10,7 +10,7 @@ function tokenClass(token: string) {
   if (token.startsWith('"') || token.startsWith("//")) {
     return token.startsWith("//") ? "syntax-comment" : "syntax-string";
   }
-  if (/^(?:type|comptime|match|when|where|need|effect|trait|instance|import|export|mut|ref|mref|true|false)$/.test(token)) {
+  if (/^(?:@\w+|type|module|comptime|match|when|where|need|effect|trait|instance|import|export|mut|ref|mref|if|then|else|kind1|kind2|kind3|true|false)$/.test(token)) {
     return "syntax-keyword";
   }
   if (/^\d+$/.test(token)) {
@@ -23,7 +23,7 @@ function tokenClass(token: string) {
 }
 
 function HighlightedCode({ code }: { code: string }) {
-  const tokenPattern = /("(?:\\.|[^"\\])*")|(\/\/[^\n]*)|(\b(?:type|comptime|match|when|where|need|effect|trait|instance|import|export|mut|ref|mref|true|false)\b)|(\b\d+\b)|(\b[A-Z][A-Za-z0-9_]*\b)|(::|=>|->|\|)/g;
+  const tokenPattern = /("(?:\\.|[^"\\])*")|(\/\/[^\n]*)|(@\w+|\b(?:type|module|comptime|match|when|where|need|effect|trait|instance|import|export|mut|ref|mref|if|then|else|kind1|kind2|kind3|true|false)\b)|(\b\d+\b)|(\b[A-Z][A-Za-z0-9_]*\b)|(::|:=|=>|->|\.)/g;
   const nodes: ReactNode[] = [];
   let cursor = 0;
   let match: RegExpExecArray | null;
