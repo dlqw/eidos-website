@@ -36,7 +36,7 @@ describe("Eidos website", () => {
     render(<App />);
 
     expect(screen.getByRole("heading", { level: 1, name: /让程序拥有/ })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "English" })).toHaveAttribute("href", "/");
+    expect(screen.getByRole("link", { name: "English" })).toHaveAttribute("href", import.meta.env.BASE_URL);
   });
 
   it("supports keyboard code-tab navigation and copy feedback", async () => {
