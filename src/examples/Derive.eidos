@@ -2,7 +2,7 @@ Marker :: trait {
     marker :: Self -> String
 }
 
-deriveMarker :: comptime Meta.DeriveInput -> Meta.Expansion {
+derive_marker :: comptime Meta.DeriveInput -> Meta.Expansion {
     input => {
         target := Meta.target(input);
         parameter := Meta.parameter("value", target);
@@ -10,7 +10,7 @@ deriveMarker :: comptime Meta.DeriveInput -> Meta.Expansion {
             "marker",
             [parameter],
             String,
-            Meta.exprString(Meta.typeName(target))
+            Meta.expr_string(Meta.type_name(target))
         );
         Meta.expansion([
             Meta.implementation(Meta.decl(Marker), target, [method])
@@ -18,7 +18,7 @@ deriveMarker :: comptime Meta.DeriveInput -> Meta.Expansion {
     }
 }
 
-@derive(deriveMarker)
+@derive(derive_marker)
 User :: type {
     name: String,
     age: Int
