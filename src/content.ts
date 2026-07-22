@@ -152,7 +152,7 @@ const manifest = `manifestSchema = 3
 sourceRoots = ["src"]
 
 [language]
-version = "0.6.0-alpha.1"
+version = "0.7.0-alpha.1"
 
 [package]
 name = "dev.eidos.example"
@@ -205,7 +205,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     menuLabel: "Open navigation",
     githubLabel: "View Eidosc on GitHub",
     hero: {
-      kicker: "Eidos programming language · 0.6.0-alpha.1",
+      kicker: "Eidos programming language · 0.7.0-alpha.1",
       title: "A typed native language for programs that reason before they run.",
       description: "Eidos combines an expression-oriented functional core, explicit systems capabilities, and typed compile-time programming in one language. Eidosc lowers the same semantic model to LLVM and editor tooling.",
       primaryAction: "Read the tutorial",
@@ -214,7 +214,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     release: {
       versionLabel: "Language",
-      version: "0.6.0-alpha.1",
+      version: "0.7.0-alpha.1",
       statusLabel: "Status",
       status: "Prerelease",
       targetLabel: "Output",
@@ -230,7 +230,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     code: {
       sectionEyebrow: "The language",
       sectionTitle: "Functional forms, systems boundaries, compile-time code.",
-      sectionDescription: "These examples are checked with Eidosc 0.6. They cover the parts of Eidos that shape real programs: data modeling, abstraction, capabilities, and structured metaprogramming.",
+      sectionDescription: "These examples are checked with Eidosc 0.7. They cover the parts of Eidos that shape real programs: data modeling, abstraction, capabilities, and structured metaprogramming.",
       copy: "Copy code",
       copied: "Copied",
       copyFailed: "Copy failed",
@@ -238,7 +238,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { label: "Data + patterns", file: "Workflow.eidos", code: workflow, caption: "Generic ADTs use comma-separated constructors; guarded and wildcard patterns make state transitions explicit." },
         { label: "Traits + HKT", file: "Abstraction.eidos", code: abstraction, caption: "Higher-kinded constraints describe reusable abstractions, while dot paths select namespaces and members." },
         { label: "Capabilities", file: "Capability.eidos", code: capability, caption: "Runtime effects remain visible in signatures. Calling Console requires the IO capability." },
-        { label: "Reflection + derive", file: "Derive.eidos", code: derive, caption: "Read-only reflection and user derives generate checked declarations through Meta.Expansion—not source strings." }
+        { label: "Reflection + derive", file: "Derive.eidos", code: derive, caption: "Read-only reflection and user derives generate checked declarations through the `meta.Type -> meta.Items` protocol—not source strings." }
       ]
     },
     principles: {
@@ -272,11 +272,11 @@ export const siteContent: Record<Locale, SiteContent> = {
       stagesLabel: "Compiler stages",
       stages: ["Source", "AST", "Naming", "Types", "HIR", "MIR", "Borrow", "LLVM", "Native"],
       items: [
-        { name: "Eidosc", kind: "Compiler", version: "0.6.0-alpha.1 target", description: "Frontend, type system, HIR/MIR, borrow analysis, LLVM backend, CLI, formatter, docs, and LSP.", href: links.source },
+        { name: "Eidosc", kind: "Compiler", version: "0.7.0-alpha.1 target", description: "Frontend, type system, HIR/MIR, borrow analysis, LLVM backend, CLI, formatter, docs, and LSP.", href: links.source },
         { name: "Eidos Std", kind: "Standard library", version: "0.2.0-alpha.1 target", description: "Versioned functional abstractions, containers, text, I/O, concurrency, FFI, and runtime-facing modules.", href: links.std },
         { name: "Eidosup", kind: "Toolchain manager", version: "Independent version", description: "Verified immutable toolchains, channels, profiles, components, targets, updates, rollback, and diagnostics.", href: links.eidosupToolchains },
         { name: "Eidosc.Bindgen", kind: "C interop", version: "0.2.0-alpha.1 target", description: "Produces Eidos package bindings from extracted C declarations without hand-written path rewrites.", href: links.bindgen },
-        { name: "Editor integrations", kind: "VS Code · Neovim · JetBrains", version: "0.6.0-alpha.1 target", description: "Syntax, semantic tokens, diagnostics, completion, hover, navigation, references, formatting, and generated declarations.", href: links.vscode }
+        { name: "Editor integrations", kind: "VS Code · Neovim · JetBrains", version: "0.7.0-alpha.1 target", description: "Syntax, semantic tokens, diagnostics, completion, hover, navigation, references, formatting, and generated declarations.", href: links.vscode }
       ]
     },
     install: {
@@ -325,7 +325,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Usable for exploration; not yet a stable 1.0 contract.",
       description: "The compiler and tooling are actively tested and reproducible. Language syntax, semantics, manifests, diagnostics, and distribution details can still change between prereleases.",
       facts: [
-        { label: "Language baseline", value: "0.6.0-alpha.1" },
+        { label: "Language baseline", value: "0.7.0-alpha.1" },
         { label: "Manifest schema", value: "3" },
         { label: "Versioning", value: "Independent components" },
         { label: "License", value: "MIT" }
@@ -374,7 +374,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     menuLabel: "打开导航",
     githubLabel: "在 GitHub 查看 Eidosc",
     hero: {
-      kicker: "Eidos 编程语言 · 0.6.0-alpha.1",
+      kicker: "Eidos 编程语言 · 0.7.0-alpha.1",
       title: "一门让程序在运行前参与推理的类型化原生语言。",
       description: "Eidos 在同一门语言中组合面向表达式的函数式核心、显式的系统能力与类型化编译期编程。Eidosc 使用同一语义模型驱动 LLVM 降级和编辑器工具。",
       primaryAction: "阅读中文教程",
@@ -383,7 +383,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     release: {
       versionLabel: "语言版本",
-      version: "0.6.0-alpha.1",
+      version: "0.7.0-alpha.1",
       statusLabel: "状态",
       status: "预发布",
       targetLabel: "输出",
@@ -399,7 +399,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     code: {
       sectionEyebrow: "语言",
       sectionTitle: "函数式形态、系统边界与编译期代码。",
-      sectionDescription: "以下示例均由 Eidosc 0.6 检查，覆盖真正塑造 Eidos 程序的数据建模、抽象、能力与结构化元编程。",
+      sectionDescription: "以下示例均由 Eidosc 0.7 检查，覆盖真正塑造 Eidos 程序的数据建模、抽象、能力与结构化元编程。",
       copy: "复制代码",
       copied: "已复制",
       copyFailed: "复制失败",
@@ -407,7 +407,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { label: "数据与模式", file: "Workflow.eidos", code: workflow, caption: "泛型 ADT 使用逗号分隔构造器；guard 与通配模式让状态处理保持显式。" },
         { label: "Trait 与 HKT", file: "Abstraction.eidos", code: abstraction, caption: "高阶类型约束描述可复用抽象；点号统一选择 Namespace 与成员。" },
         { label: "显式能力", file: "Capability.eidos", code: capability, caption: "运行时 effect 会出现在函数签名中；调用 Console 需要 IO 能力。" },
-        { label: "反射与 derive", file: "Derive.eidos", code: derive, caption: "只读反射和用户 derive 通过 Meta.Expansion 生成经过检查的声明，而不是源代码字符串。" }
+        { label: "反射与 derive", file: "Derive.eidos", code: derive, caption: "只读反射和用户 derive 通过 `meta.Type -> meta.Items` 协议生成经过检查的声明，而不是源代码字符串。" }
       ]
     },
     principles: {
@@ -431,7 +431,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       outputLabel: "Eidosc",
       source: incomplete,
       output: diagnostic,
-      note: "这是来自 0.6 编译器的真实诊断。缺失的 Failed 构造器会作为模式覆盖 witness 报告。"
+      note: "这是来自 0.7 编译器的真实诊断。缺失的 Failed 构造器会作为模式覆盖 witness 报告。"
     },
     toolchain: {
       eyebrow: "工具链",
@@ -441,11 +441,11 @@ export const siteContent: Record<Locale, SiteContent> = {
       stagesLabel: "编译阶段",
       stages: ["源码", "AST", "名称解析", "类型", "HIR", "MIR", "借用", "LLVM", "原生程序"],
       items: [
-        { name: "Eidosc", kind: "编译器", version: "目标 0.6.0-alpha.1", description: "前端、类型系统、HIR/MIR、借用分析、LLVM 后端、CLI、格式化器、文档与 LSP。", href: links.source },
+        { name: "Eidosc", kind: "编译器", version: "目标 0.7.0-alpha.1", description: "前端、类型系统、HIR/MIR、借用分析、LLVM 后端、CLI、格式化器、文档与 LSP。", href: links.source },
         { name: "Eidos Std", kind: "标准库", version: "目标 0.2.0-alpha.1", description: "版本化函数式抽象、容器、文本、I/O、并发、FFI 与运行时接口模块。", href: links.std },
         { name: "Eidosup", kind: "工具链管理器", version: "独立版本域", description: "经过验证的不可变工具链、通道、profile、组件、target、更新、回滚与诊断。", href: links.eidosupToolchains },
         { name: "Eidosc.Bindgen", kind: "C 互操作", version: "目标 0.2.0-alpha.1", description: "根据提取后的 C 声明生成 Eidos 包绑定，无需手写限定路径改写。", href: links.bindgen },
-        { name: "编辑器集成", kind: "VS Code · Neovim · JetBrains", version: "目标 0.6.0-alpha.1", description: "语法、语义 token、诊断、补全、hover、跳转、引用、格式化与生成声明。", href: links.vscode }
+        { name: "编辑器集成", kind: "VS Code · Neovim · JetBrains", version: "目标 0.7.0-alpha.1", description: "语法、语义 token、诊断、补全、hover、跳转、引用、格式化与生成声明。", href: links.vscode }
       ]
     },
     install: {
@@ -494,7 +494,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "可用于探索，但尚未形成稳定的 1.0 契约。",
       description: "当前编译器与工具链持续测试并可复现。语言语法、语义、manifest、诊断和分发细节仍可能在预发布版本间变化。",
       facts: [
-        { label: "语言基线", value: "0.6.0-alpha.1" },
+        { label: "语言基线", value: "0.7.0-alpha.1" },
         { label: "Manifest schema", value: "3" },
         { label: "版本策略", value: "组件独立版本化" },
         { label: "许可证", value: "MIT" }

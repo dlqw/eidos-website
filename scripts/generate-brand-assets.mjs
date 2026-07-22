@@ -117,7 +117,7 @@ const social = socialTemplate
   .replace("{{OWL}}", owlGeometry({ body: colors.graphite, eyes: colors.paper, beak: colors.oxide }))
   .replace("{{WORDMARK}}", textAsPaths("EIDOS", 442, 239, 108, 720, 5))
   .replace("{{TAGLINE}}", textAsPaths("A statically typed native language.", 446, 318, 34, 500))
-  .replace("{{VERSION}}", textAsPaths("0.6.0-alpha.1", 468, 405, 18, 700, 1.2))
+  .replace("{{VERSION}}", textAsPaths("0.7.0-alpha.1", 468, 405, 18, 700, 1.2))
   .replace("{{FOOTER}}", textAsPaths("Functional core · typed metaprogramming · LLVM toolchain", 88, 558, 21, 500));
 
 await Promise.all([
