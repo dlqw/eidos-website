@@ -11,7 +11,7 @@ derive_marker :: comptime meta.Type -> meta.Items {
             String,
             meta.expr_string(meta.name_of(target))
         );
-        [meta.implementation(meta.declaration_of(Marker), target, [method])]
+        [meta.instance(meta.declaration_of(Marker), target, [method])]
     }
 }
 

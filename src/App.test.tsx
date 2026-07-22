@@ -28,7 +28,7 @@ describe("Eidos website", () => {
     expect(screen.getByRole("heading", { level: 1, name: /typed native language/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Functional forms, systems boundaries, compile-time code." })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "From source file to native artifact—and back to the editor." })).toBeInTheDocument();
-    expect(screen.getAllByText("0.6.0-alpha.1", { selector: "dd" })).toHaveLength(2);
+    expect(screen.getAllByText("0.7.0-alpha.1", { selector: "dd" })).toHaveLength(2);
   });
 
   it("uses real locale paths for Simplified Chinese content", () => {

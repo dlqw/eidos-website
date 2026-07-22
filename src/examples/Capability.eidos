@@ -5,5 +5,5 @@ announce :: String -> Unit need IO {
 }
 
 main :: Unit -> Unit need IO {
-    _ => announce("Eidos 0.6")
+    _ => announce("Eidos 0.7")
 }
