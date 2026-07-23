@@ -1,0 +1,14 @@
+import std.Result
+import std.Either
+
+summarize :: Result[Int, String] -> Either[String, Int] -> Int
+{
+    parsed => choice => (parsed, choice)
+        then _0 + _1
+        else 0
+}
+
+main :: Unit -> Int
+{
+    summarize(Ok(20))(Right(22))
+}
