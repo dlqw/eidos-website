@@ -16,6 +16,9 @@ function tokenClass(token: string) {
   if (/^\d+$/.test(token)) {
     return "syntax-number";
   }
+  if (/^_(?:0|[1-9]\d*)$/.test(token)) {
+    return "syntax-variable";
+  }
   if (/^[A-Z]/.test(token)) {
     return "syntax-type";
   }
@@ -23,7 +26,7 @@ function tokenClass(token: string) {
 }
 
 function HighlightedCode({ code }: { code: string }) {
-  const tokenPattern = /("(?:\\.|[^"\\])*")|(\/\/[^\n]*)|(@\w+|\b(?:type|module|comptime|match|when|where|need|effect|trait|instance|import|export|mut|ref|mref|if|then|else|kind1|kind2|kind3|true|false)\b)|(\b\d+\b)|(\b[A-Z][A-Za-z0-9_]*\b)|(::|:=|=>|->|\.)/g;
+  const tokenPattern = /("(?:\\.|[^"\\])*")|(\/\/[^\n]*)|(@\w+|\b(?:type|module|comptime|match|when|where|need|effect|trait|instance|import|export|mut|ref|mref|if|then|else|kind1|kind2|kind3|true|false)\b)|(_(?:0|[1-9]\d*)\b)|(\b\d+\b)|(\b[A-Z][A-Za-z0-9_]*\b)|(::|:=|=>|->|\.)/g;
   const nodes: ReactNode[] = [];
   let cursor = 0;
   let match: RegExpExecArray | null;
