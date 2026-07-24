@@ -274,11 +274,11 @@ export const siteContent: Record<Locale, SiteContent> = {
       stagesLabel: "Compiler stages",
       stages: ["Source", "AST", "Naming", "Types", "HIR", "MIR", "Borrow", "LLVM", "Native"],
       items: [
-        { name: "Eidosc", kind: "Compiler", version: "0.8.0-alpha.1 target", description: "Frontend, type system, HIR/MIR, borrow analysis, LLVM backend, CLI, formatter, docs, and LSP.", href: links.source },
-        { name: "Eidos Std", kind: "Standard library", version: "0.4.0-alpha.1 target", description: "Versioned functional abstractions, Either, containers, text, I/O, concurrency, FFI, and runtime-facing modules.", href: links.std },
+        { name: "Eidosc", kind: "Compiler", version: "0.5.0-alpha.1", description: "Frontend, type system, HIR/MIR, borrow analysis, LLVM backend, CLI, formatter, docs, and LSP.", href: links.source },
+        { name: "Eidos Std", kind: "Standard library", version: "0.2.0-alpha.1", description: "Versioned functional abstractions, Either, containers, text, I/O, concurrency, FFI, and runtime-facing modules.", href: links.std },
         { name: "Eidosup", kind: "Toolchain manager", version: "Independent version", description: "Verified immutable toolchains, channels, profiles, components, targets, updates, rollback, and diagnostics.", href: links.eidosupToolchains },
-        { name: "Eidosc.Bindgen", kind: "C interop", version: "0.2.0-alpha.1 target", description: "Produces Eidos package bindings from extracted C declarations without hand-written path rewrites.", href: links.bindgen },
-        { name: "Editor integrations", kind: "VS Code · Neovim · JetBrains", version: "0.8.0-alpha.1 target", description: "Syntax, semantic tokens, diagnostics, completion, hover, navigation, references, formatting, and generated declarations.", href: links.vscode }
+        { name: "Eidosc.Bindgen", kind: "C interop", version: "0.1.0-alpha.1", description: "Produces Eidos package bindings from extracted C declarations without hand-written path rewrites.", href: links.bindgen },
+        { name: "Editor integrations", kind: "VS Code · Neovim · JetBrains", version: "0.8.0-alpha.1", description: "Syntax, semantic tokens, diagnostics, completion, hover, navigation, references, formatting, and generated declarations.", href: links.vscode }
       ]
     },
     install: {
@@ -444,11 +444,11 @@ export const siteContent: Record<Locale, SiteContent> = {
       stagesLabel: "编译阶段",
       stages: ["源码", "AST", "名称解析", "类型", "HIR", "MIR", "借用", "LLVM", "原生程序"],
       items: [
-        { name: "Eidosc", kind: "编译器", version: "目标 0.8.0-alpha.1", description: "前端、类型系统、HIR/MIR、借用分析、LLVM 后端、CLI、格式化器、文档与 LSP。", href: links.source },
-        { name: "Eidos Std", kind: "标准库", version: "目标 0.4.0-alpha.1", description: "版本化函数式抽象、Either、容器、文本、I/O、并发、FFI 与运行时接口模块。", href: links.std },
+        { name: "Eidosc", kind: "编译器", version: "0.5.0-alpha.1", description: "前端、类型系统、HIR/MIR、借用分析、LLVM 后端、CLI、格式化器、文档与 LSP。", href: links.source },
+        { name: "Eidos Std", kind: "标准库", version: "0.2.0-alpha.1", description: "版本化函数式抽象、Either、容器、文本、I/O、并发、FFI 与运行时接口模块。", href: links.std },
         { name: "Eidosup", kind: "工具链管理器", version: "独立版本域", description: "经过验证的不可变工具链、通道、profile、组件、target、更新、回滚与诊断。", href: links.eidosupToolchains },
-        { name: "Eidosc.Bindgen", kind: "C 互操作", version: "目标 0.2.0-alpha.1", description: "根据提取后的 C 声明生成 Eidos 包绑定，无需手写限定路径改写。", href: links.bindgen },
-        { name: "编辑器集成", kind: "VS Code · Neovim · JetBrains", version: "目标 0.8.0-alpha.1", description: "语法、语义 token、诊断、补全、hover、跳转、引用、格式化与生成声明。", href: links.vscode }
+        { name: "Eidosc.Bindgen", kind: "C 互操作", version: "0.1.0-alpha.1", description: "根据提取后的 C 声明生成 Eidos 包绑定，无需手写限定路径改写。", href: links.bindgen },
+        { name: "编辑器集成", kind: "VS Code · Neovim · JetBrains", version: "0.8.0-alpha.1", description: "语法、语义 token、诊断、补全、hover、跳转、引用、格式化与生成声明。", href: links.vscode }
       ]
     },
     install: {
