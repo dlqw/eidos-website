@@ -278,7 +278,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { name: "Eidos Std", kind: "Standard library", version: "0.2.0-alpha.1", description: "Versioned functional abstractions, Either, containers, text, I/O, concurrency, FFI, and runtime-facing modules.", href: links.std },
         { name: "Eidosup", kind: "Toolchain manager", version: "Independent version", description: "Verified immutable toolchains, channels, profiles, components, targets, updates, rollback, and diagnostics.", href: links.eidosupToolchains },
         { name: "Eidosc.Bindgen", kind: "C interop", version: "0.1.0-alpha.1", description: "Produces Eidos package bindings from extracted C declarations without hand-written path rewrites.", href: links.bindgen },
-        { name: "Editor integrations", kind: "VS Code · Neovim · JetBrains", version: "0.8.0-alpha.1", description: "Syntax, semantic tokens, diagnostics, completion, hover, navigation, references, formatting, and generated declarations.", href: links.vscode }
+        { name: "Editor integrations", kind: "VS Code · Neovim · JetBrains", version: "0.8.0 pre / alpha.1", description: "Eidos Language 0.8.0 is a VS Code Marketplace prerelease; Neovim and JetBrains remain 0.8.0-alpha.1. Includes syntax, semantic tokens, diagnostics, completion, hover, navigation, references, formatting, and generated declarations.", href: links.vscode }
       ]
     },
     install: {
@@ -448,7 +448,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { name: "Eidos Std", kind: "标准库", version: "0.2.0-alpha.1", description: "版本化函数式抽象、Either、容器、文本、I/O、并发、FFI 与运行时接口模块。", href: links.std },
         { name: "Eidosup", kind: "工具链管理器", version: "独立版本域", description: "经过验证的不可变工具链、通道、profile、组件、target、更新、回滚与诊断。", href: links.eidosupToolchains },
         { name: "Eidosc.Bindgen", kind: "C 互操作", version: "0.1.0-alpha.1", description: "根据提取后的 C 声明生成 Eidos 包绑定，无需手写限定路径改写。", href: links.bindgen },
-        { name: "编辑器集成", kind: "VS Code · Neovim · JetBrains", version: "0.8.0-alpha.1", description: "语法、语义 token、诊断、补全、hover、跳转、引用、格式化与生成声明。", href: links.vscode }
+        { name: "编辑器集成", kind: "VS Code · Neovim · JetBrains", version: "0.8.0 预发布 / alpha.1", description: "Eidos Language 0.8.0 通过 VS Code Marketplace 预发布频道分发；Neovim 与 JetBrains 保持 0.8.0-alpha.1。包含语法、语义 token、诊断、补全、hover、跳转、引用、格式化与生成声明。", href: links.vscode }
       ]
     },
     install: {
