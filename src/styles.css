@@ -613,6 +613,7 @@ svg {
 .syntax-string { color: #d0a66c; }
 .syntax-keyword { color: #de7a63; }
 .syntax-number { color: #91a084; }
+.syntax-variable { color: #b8a7cf; }
 .syntax-type { color: #c9b58a; }
 .syntax-operator { color: #aaa59c; }
 
