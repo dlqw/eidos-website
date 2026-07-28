@@ -1,0 +1,16 @@
+add :: Int -> Int -> Int
+{
+    left, right => left + right
+}
+
+pair_sum :: (Int, Int) -> Int
+{
+    (left, right) => left + right
+}
+
+add_pair_sums :: (Int, Int) -> (Int, Int) -> Int
+{
+    (left_a, left_b), (right_a, right_b) => left_a + left_b + right_a + right_b
+}
+
+add_one :: Int -> Int = add(1);

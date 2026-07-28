@@ -1,6 +1,7 @@
 import abstraction from "./examples/Abstraction.eidos?raw";
 import branchSelection from "./examples/BranchSelection.eidos?raw";
 import capability from "./examples/Capability.eidos?raw";
+import curriedBinders from "./examples/CurriedBinders.eidos?raw";
 import derive from "./examples/Derive.eidos?raw";
 import incomplete from "./examples/Incomplete.eidos?raw";
 import workflow from "./examples/Workflow.eidos?raw";
@@ -153,7 +154,7 @@ const manifest = `manifestSchema = 3
 sourceRoots = ["src"]
 
 [language]
-version = "0.8.0-alpha.1"
+version = "0.9.0-alpha.1"
 
 [package]
 name = "dev.eidos.example"
@@ -206,7 +207,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     menuLabel: "Open navigation",
     githubLabel: "View Eidosc on GitHub",
     hero: {
-      kicker: "Eidos programming language · 0.8.0-alpha.1",
+      kicker: "Eidos programming language · 0.9.0-alpha.1",
       title: "A typed native language for programs that reason before they run.",
       description: "Eidos combines an expression-oriented functional core, explicit systems capabilities, and typed compile-time programming in one language. Eidosc lowers the same semantic model to LLVM and editor tooling.",
       primaryAction: "Read the tutorial",
@@ -215,7 +216,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     release: {
       versionLabel: "Language",
-      version: "0.8.0-alpha.1",
+      version: "0.9.0-alpha.1",
       statusLabel: "Status",
       status: "Prerelease",
       targetLabel: "Output",
@@ -231,7 +232,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     code: {
       sectionEyebrow: "The language",
       sectionTitle: "Functional forms, systems boundaries, compile-time code.",
-      sectionDescription: "These examples are checked with the Eidos 0.8 development toolchain. They cover the parts of Eidos that shape real programs: data modeling, branch selection, abstraction, capabilities, and structured metaprogramming.",
+      sectionDescription: "These examples are checked with the Eidos 0.9 development toolchain. They cover the parts of Eidos that shape real programs: data modeling, branch selection, abstraction, capabilities, and structured metaprogramming.",
       copy: "Copy code",
       copied: "Copied",
       copyFailed: "Copy failed",
@@ -239,6 +240,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { label: "Data + patterns", file: "Workflow.eidos", code: workflow, caption: "Generic ADTs use comma-separated constructors; guarded and wildcard patterns make state transitions explicit." },
         { label: "Branch selection", file: "BranchSelection.eidos", code: branchSelection, caption: "Implicit Unit bodies remove a redundant wildcard branch; `then` / `else` select canonical Option, Result, and right-biased Either payloads through arm-local placeholders." },
         { label: "Traits + HKT", file: "Abstraction.eidos", code: abstraction, caption: "Higher-kinded constraints describe reusable abstractions, while dot paths select namespaces and members." },
+        { label: "Curried binders", file: "CurriedBinders.eidos", code: curriedBinders, caption: "Comma-separated binders preserve curried partial application; parentheses continue to mean one tuple pattern." },
         { label: "Capabilities", file: "Capability.eidos", code: capability, caption: "Runtime effects remain visible in signatures. Calling Console requires the IO capability." },
         { label: "Reflection + derive", file: "Derive.eidos", code: derive, caption: "Read-only reflection and user derives generate checked declarations through the `meta.Type -> meta.Items` protocol—not source strings." }
       ]
@@ -278,7 +280,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { name: "Eidos Std", kind: "Standard library", version: "0.2.0-alpha.1", description: "Versioned functional abstractions, Either, containers, text, I/O, concurrency, FFI, and runtime-facing modules.", href: links.std },
         { name: "Eidosup", kind: "Toolchain manager", version: "Independent version", description: "Verified immutable toolchains, channels, profiles, components, targets, updates, rollback, and diagnostics.", href: links.eidosupToolchains },
         { name: "Eidosc.Bindgen", kind: "C interop", version: "0.1.0-alpha.1", description: "Produces Eidos package bindings from extracted C declarations without hand-written path rewrites.", href: links.bindgen },
-        { name: "Editor integrations", kind: "VS Code · Neovim · JetBrains", version: "0.8.0 pre / alpha.1", description: "Eidos Language 0.8.0 is a VS Code Marketplace prerelease; Neovim and JetBrains remain 0.8.0-alpha.1. Includes syntax, semantic tokens, diagnostics, completion, hover, navigation, references, formatting, and generated declarations.", href: links.vscode }
+        { name: "Editor integrations", kind: "VS Code · Neovim · JetBrains", version: "0.9.0 prerelease / alpha.1", description: "Eidos Language 0.9.0 is a VS Code Marketplace prerelease; Neovim and JetBrains remain 0.9.0-alpha.1. Includes syntax, semantic tokens, diagnostics, completion, hover, navigation, references, formatting, and generated declarations.", href: links.vscode }
       ]
     },
     install: {
@@ -327,7 +329,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "Usable for exploration; not yet a stable 1.0 contract.",
       description: "The compiler and tooling are actively tested and reproducible. Language syntax, semantics, manifests, diagnostics, and distribution details can still change between prereleases.",
       facts: [
-        { label: "Language baseline", value: "0.8.0-alpha.1" },
+        { label: "Language baseline", value: "0.9.0-alpha.1" },
         { label: "Manifest schema", value: "3" },
         { label: "Versioning", value: "Independent components" },
         { label: "License", value: "MIT" }
@@ -360,7 +362,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { label: "MIT License", href: links.license }
       ],
       copyright: "Copyright © 2026 rdququ. Eidosc is available under the MIT License.",
-      closingLine: "Language 0.8 · concise branches, explicit boundaries"
+      closingLine: "Language 0.9 · concise branches, explicit boundaries"
     }
   },
   "zh-CN": {
@@ -376,7 +378,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     menuLabel: "打开导航",
     githubLabel: "在 GitHub 查看 Eidosc",
     hero: {
-      kicker: "Eidos 编程语言 · 0.8.0-alpha.1",
+      kicker: "Eidos 编程语言 · 0.9.0-alpha.1",
       title: "一门让程序在运行前参与推理的类型化原生语言。",
       description: "Eidos 在同一门语言中组合面向表达式的函数式核心、显式的系统能力与类型化编译期编程。Eidosc 使用同一语义模型驱动 LLVM 降级和编辑器工具。",
       primaryAction: "阅读中文教程",
@@ -385,7 +387,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     },
     release: {
       versionLabel: "语言版本",
-      version: "0.8.0-alpha.1",
+      version: "0.9.0-alpha.1",
       statusLabel: "状态",
       status: "预发布",
       targetLabel: "输出",
@@ -401,7 +403,7 @@ export const siteContent: Record<Locale, SiteContent> = {
     code: {
       sectionEyebrow: "语言",
       sectionTitle: "函数式形态、系统边界与编译期代码。",
-      sectionDescription: "以下示例均由 Eidos 0.8 开发工具链检查，覆盖真正塑造 Eidos 程序的数据建模、分支选择、抽象、能力与结构化元编程。",
+      sectionDescription: "以下示例均由 Eidos 0.9 开发工具链检查，覆盖真正塑造 Eidos 程序的数据建模、分支选择、抽象、能力与结构化元编程。",
       copy: "复制代码",
       copied: "已复制",
       copyFailed: "复制失败",
@@ -409,6 +411,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { label: "数据与模式", file: "Workflow.eidos", code: workflow, caption: "泛型 ADT 使用逗号分隔构造器；guard 与通配模式让状态处理保持显式。" },
         { label: "分支选择", file: "BranchSelection.eidos", code: branchSelection, caption: "隐式 Unit 函数体移除无信息量的通配分支；`then` / `else` 通过 arm 局部占位符选择规范 Option、Result 与右偏 Either 的 payload。" },
         { label: "Trait 与 HKT", file: "Abstraction.eidos", code: abstraction, caption: "高阶类型约束描述可复用抽象；点号统一选择 Namespace 与成员。" },
+        { label: "柯里化绑定", file: "CurriedBinders.eidos", code: curriedBinders, caption: "逗号 binder list 保留柯里化与部分应用；外层括号仍明确表示一个 tuple pattern。" },
         { label: "显式能力", file: "Capability.eidos", code: capability, caption: "运行时 effect 会出现在函数签名中；调用 Console 需要 IO 能力。" },
         { label: "反射与 derive", file: "Derive.eidos", code: derive, caption: "只读反射和用户 derive 通过 `meta.Type -> meta.Items` 协议生成经过检查的声明，而不是源代码字符串。" }
       ]
@@ -448,7 +451,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { name: "Eidos Std", kind: "标准库", version: "0.2.0-alpha.1", description: "版本化函数式抽象、Either、容器、文本、I/O、并发、FFI 与运行时接口模块。", href: links.std },
         { name: "Eidosup", kind: "工具链管理器", version: "独立版本域", description: "经过验证的不可变工具链、通道、profile、组件、target、更新、回滚与诊断。", href: links.eidosupToolchains },
         { name: "Eidosc.Bindgen", kind: "C 互操作", version: "0.1.0-alpha.1", description: "根据提取后的 C 声明生成 Eidos 包绑定，无需手写限定路径改写。", href: links.bindgen },
-        { name: "编辑器集成", kind: "VS Code · Neovim · JetBrains", version: "0.8.0 预发布 / alpha.1", description: "Eidos Language 0.8.0 通过 VS Code Marketplace 预发布频道分发；Neovim 与 JetBrains 保持 0.8.0-alpha.1。包含语法、语义 token、诊断、补全、hover、跳转、引用、格式化与生成声明。", href: links.vscode }
+        { name: "编辑器集成", kind: "VS Code · Neovim · JetBrains", version: "0.9.0 预发布 / alpha.1", description: "Eidos Language 0.9.0 通过 VS Code Marketplace 预发布频道分发；Neovim 与 JetBrains 保持 0.9.0-alpha.1。包含语法、语义 token、诊断、补全、hover、跳转、引用、格式化与生成声明。", href: links.vscode }
       ]
     },
     install: {
@@ -497,7 +500,7 @@ export const siteContent: Record<Locale, SiteContent> = {
       title: "可用于探索，但尚未形成稳定的 1.0 契约。",
       description: "当前编译器与工具链持续测试并可复现。语言语法、语义、manifest、诊断和分发细节仍可能在预发布版本间变化。",
       facts: [
-        { label: "语言基线", value: "0.8.0-alpha.1" },
+        { label: "语言基线", value: "0.9.0-alpha.1" },
         { label: "Manifest schema", value: "3" },
         { label: "版本策略", value: "组件独立版本化" },
         { label: "许可证", value: "MIT" }
@@ -530,7 +533,7 @@ export const siteContent: Record<Locale, SiteContent> = {
         { label: "MIT License", href: links.license }
       ],
       copyright: "Copyright © 2026 rdququ。Eidosc 基于 MIT License 开源。",
-      closingLine: "Language 0.8 · 精简分支，显式边界"
+      closingLine: "Language 0.9 · 精简分支，显式边界"
     }
   }
 };
